@@ -19,5 +19,7 @@
 #' @importFrom stats supsmu
 #' @import S4Vectors
 #' @import ProtGenerics
+#'
+#' @useDynLib MSExample, .registration = TRUE
 NULL
 

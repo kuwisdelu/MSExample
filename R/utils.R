@@ -8,11 +8,12 @@ seq_ppm <- function(from, to, ppm) {
 }
 
 # Return indices of local maxima
-locmax <- function(x, halfWindow = 2, ..., version = 1) {
+locmax <- function(x, halfWindow = 2, ..., version = 4) {
 	switch(version,
 		locmax1(x, halfWindow=halfWindow, ...),
 		locmax2(x, halfWindow=halfWindow, ...),
-		locmax3(x, halfWindow=halfWindow, ...))
+		locmax3(x, halfWindow=halfWindow, ...),
+		Clocmax(x, halfWindow=halfWindow, ...))
 }
 
 # Return indices of local maxima (version 1)
@@ -73,5 +74,10 @@ locmax3 <- function(x, halfWindow = 2) {
 		}
 	}, logical(1))
 	c(rep(FALSE, halfWindow), out, rep(FALSE, halfWindow))
+}
+
+Clocmax <- function(x, halfWindow = 2) {
+	p <- .Call("C_locmax", x, halfWindow, PACKAGE="MSExample")
+	which(p)
 }
 
