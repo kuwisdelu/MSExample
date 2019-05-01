@@ -3,6 +3,7 @@
 \docType{methods}
 \name{findPeaks,MassSpectrum-method}
 \alias{findPeaks,MassSpectrum-method}
+\alias{findPeaks}
 \title{Find peaks in mass spectra}
 \usage{
 \S4method{findPeaks}{MassSpectrum}(object, SNR = 6, ...)

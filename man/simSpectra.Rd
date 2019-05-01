@@ -9,7 +9,7 @@ simSpectra(n = 1L, peaks = 50L, mz = rlnorm(peaks, 7, 0.3),
   max(mz), by = 100, sdpeaks = sdpeakmult * log1p(intensity),
   sdpeakmult = 0.2, sdnoise = 0.1, sdmz = 10, resolution = 1000,
   fmax = 0.5, baseline = 0, decay = 10, units = c("ppm", "mz"),
-  representation = c("profile", "centroid"), ...)
+  representation = c("profile", "centroid"))
 }
 \arguments{
 \item{n}{The number of spectra to simulate}
@@ -27,6 +27,10 @@ simSpectra(n = 1L, peaks = 50L, mz = rlnorm(peaks, 7, 0.3),
 \item{by}{Size of m/z bins}
 
 \item{sdpeaks}{Log-standard deviation of peak intensities}
+
+\item{sdpeakmult}{Multiplier for peak variance}
+
+\item{sdnoise}{Standard deviation of noise}
 
 \item{sdmz}{Mass error}
 

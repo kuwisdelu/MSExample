@@ -3,6 +3,7 @@
 \docType{methods}
 \name{smoothNoise,MassSpectrum-method}
 \alias{smoothNoise,MassSpectrum-method}
+\alias{smoothNoise}
 \title{Smooth mass spectra}
 \usage{
 \S4method{smoothNoise}{MassSpectrum}(object, halfWindow = 2, ...)

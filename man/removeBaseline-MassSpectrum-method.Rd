@@ -3,6 +3,7 @@
 \docType{methods}
 \name{removeBaseline,MassSpectrum-method}
 \alias{removeBaseline,MassSpectrum-method}
+\alias{removeBaseline}
 \title{Remove baseline from mass spectra}
 \usage{
 \S4method{removeBaseline}{MassSpectrum}(object, ...)

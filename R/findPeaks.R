@@ -7,6 +7,7 @@
 #
 #' @return A \code{MassSpectrum} object with peaks
 #'
+#' @aliases findPeaks
 #' @export
 setMethod("findPeaks", "MassSpectrum",
 	function(object, SNR = 6, ...) {

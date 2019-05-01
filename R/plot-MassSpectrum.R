@@ -9,7 +9,9 @@
 #' @param ylab y-axis label
 #' @param type The type of plot to draw
 #' @param col The plot color
+#' @param peaklabels Number of peaks to label
 #' @param add Add to an existing plot?
+#' @param ... Arguments passed to plot function
 #' 
 #' @export
 #' @rdname plot-MassSpectrum

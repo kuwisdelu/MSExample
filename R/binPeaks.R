@@ -8,6 +8,7 @@
 #
 #' @return A binned \code{MassSpectrum} object
 #'
+#' @aliases binPeaks
 #' @export
 setMethod("binPeaks", "MassSpectrum",
 	function(object, binwidth = 1000, units=c("ppm", "mz"), ...)

@@ -26,7 +26,11 @@
 
 \item{col}{The plot color}
 
+\item{peaklabels}{Number of peaks to label}
+
 \item{add}{Add to an existing plot?}
+
+\item{...}{Arguments passed to plot function}
 
 \item{y}{A second mass spectrum to plot}
 }

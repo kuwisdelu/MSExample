@@ -10,7 +10,7 @@
 \alias{isCentroided,MassSpectrum-method}
 \alias{tic,MassSpectrum-method}
 \alias{length,MassSpectrum-method}
-\alias{[,MassSpectrum,ANY,ANY,ANY-method}
+\alias{[,MassSpectrum-method}
 \title{Mass spectrum objects}
 \usage{
 \S4method{mz}{MassSpectrum}(object, ...)
@@ -27,7 +27,7 @@
 
 \S4method{length}{MassSpectrum}(x)
 
-\S4method{[}{MassSpectrum,ANY,ANY,ANY}(x, i, j, ..., drop = TRUE)
+\S4method{[}{MassSpectrum}(x, i, j, ..., drop = TRUE)
 }
 \arguments{
 \item{object}{A \code{MassSpectrum} object}
@@ -35,6 +35,14 @@
 \item{...}{Additional arguments}
 
 \item{value}{A replacement value}
+
+\item{x}{A \code{MassSpectrum} object}
+
+\item{i}{indices specifying elements to extract}
+
+\item{j}{indices specifying elements to extract}
+
+\item{drop}{ignored}
 }
 \description{
 \code{MassSpectrum} is a simple S4 class designed to

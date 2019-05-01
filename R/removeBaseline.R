@@ -6,6 +6,7 @@
 #
 #' @return A \code{MassSpectrum} object with baseline removed
 #'
+#' @aliases removeBaseline
 #' @export
 setMethod("removeBaseline", "MassSpectrum",
 	function(object, ...) {

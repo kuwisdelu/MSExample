@@ -7,6 +7,7 @@
 #
 #' @return A smoothed \code{MassSpectrum} object
 #'
+#' @aliases smoothNoise
 #' @export
 setMethod("smoothNoise", "MassSpectrum",
 	function(object, halfWindow = 2, ...) {

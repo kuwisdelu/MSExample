@@ -6,6 +6,10 @@
 #'
 #' @param object A \code{MassSpectrum} object
 #' @param value A replacement value
+#' @param x A \code{MassSpectrum} object
+#' @param i indices specifying elements to extract
+#' @param j indices specifying elements to extract
+#' @param drop ignored
 #' @param ... Additional arguments
 #' 
 #' @slot mz The m/z-values.

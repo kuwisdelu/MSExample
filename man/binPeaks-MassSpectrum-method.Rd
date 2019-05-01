@@ -3,6 +3,7 @@
 \docType{methods}
 \name{binPeaks,MassSpectrum-method}
 \alias{binPeaks,MassSpectrum-method}
+\alias{binPeaks}
 \title{Bin peaks in mass spectra}
 \usage{
 \S4method{binPeaks}{MassSpectrum}(object, binwidth = 1000,

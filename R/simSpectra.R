@@ -12,6 +12,8 @@
 #' @param to Upper end of mass range
 #' @param by Size of m/z bins
 #' @param sdpeaks Log-standard deviation of peak intensities
+#' @param sdpeakmult Multiplier for peak variance
+#' @param sdnoise Standard deviation of noise
 #' @param sdmz Mass error
 #' @param resolution Mass resolution as defined by 'm / dm'
 #' 					where 'm' is the observed mass and 'dm'
@@ -34,7 +36,7 @@ simSpectra <- function(n = 1L, peaks = 50L,
 	sdpeaks = sdpeakmult * log1p(intensity), sdpeakmult = 0.2,
 	sdnoise = 0.1, sdmz = 10, resolution = 1000, fmax = 0.5,
 	baseline = 0, decay = 10, units=c("ppm", "mz"),
-	representation = c("profile", "centroid"), ...)
+	representation = c("profile", "centroid"))
 {
 	if ( length(mz) != length(intensity) )
 		stop("length of mz and intensity must match")

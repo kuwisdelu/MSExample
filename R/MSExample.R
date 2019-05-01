@@ -10,10 +10,14 @@
 #' 
 #' @import methods
 #' @import graphics
+#' @importFrom stats approx
+#' @importFrom stats convolve
+#' @importFrom stats dnorm
+#' @importFrom stats qnorm
+#' @importFrom stats rlnorm
+#' @importFrom stats rnorm
+#' @importFrom stats supsmu
 #' @import S4Vectors
 #' @import ProtGenerics
-#' @importMethodsFrom BiocGenerics normalize
-#' @import SummarizedExperiment
-#' @import BiocParallel
 NULL
 
