@@ -1,0 +1,113 @@
+---
+title: "_MSExample_: A simple example package for mass spectrometry"
+author: "Kylie Ariel Bemis"
+date: "May 1, 2019"
+output:
+  BiocStyle::html_document:
+  toc: true
+vignette: >
+  %\VignetteIndexEntry{MSExample: A simple example package for mass spectrometry}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r style, echo=FALSE, results='asis'}
+BiocStyle::markdown()
+```
+
+# Introduction 
+
+*MSExample* is a simple example package for mass spectrometry (MS).
+
+It implements some basic classes and methods for working with raw MS data, including:
+
+- plotting spectra
+
+- smoothing spectra
+
+- baseline correction
+
+- peak detection
+
+- peak binning
+
+It is not intended for actual use, but rather as an example of Bioconductor package development for the Advanced R session of the May Institute Computation and Statistics for mass spectrometry and proteomics short course at Northeastern University
+
+# Simulating spectra
+
+We can use the `simSpectra` to simulate a mass spectrum.
+
+```{r sim}
+library(MSExample)
+
+set.seed(2019)
+s1 <- simSpectra(baseline=4)
+```
+
+Mass spectra are represented as `MassSpectrum` objects.
+
+```{r spectrum}
+s1
+```
+
+# Plotting spectra
+
+Use `plot()` to plot a `MassSpectrum`.
+
+```{r plot, fig.height=4, fig.width=8}
+plot(s1)
+```
+
+# Spectral processing
+
+
+Several processing options are provided.
+
+
+## Smoothing
+
+Use `smoothNoise()` to smooth a `MassSpectrum`.
+
+```{r smooth, fig.height=4, fig.width=8}
+s2 <- smoothNoise(s1)
+
+plot(s2)
+```
+
+## Baseline correction
+
+Use `removeBaseline()` to baseline correct a `MassSpectrum`.
+
+```{r baseline, fig.height=4, fig.width=8}
+s3 <- removeBaseline(s2)
+
+plot(s3)
+```
+
+## Peak detection
+
+Use `findPeaks()` to detect peaks in a `MassSpectrum`.
+
+```{r peaks, fig.height=4, fig.width=8}
+s4 <- findPeaks(s3)
+
+plot(s4)
+```
+
+## Bin peaks
+
+
+Use `binPeaks()` to bin a `MassSpectrum` to detected peaks.
+
+```{r bin, fig.height=4, fig.width=8}
+s5 <- binPeaks(s4)
+
+plot(s5)
+```
+
+# Session information
+
+```{r}
+sessionInfo()
+```
+

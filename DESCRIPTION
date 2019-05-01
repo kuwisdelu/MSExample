@@ -1,0 +1,20 @@
+Package: MSExample
+Type: Package
+Title: An example R package for mass spectrometry
+Version: 0.0.1
+Date: 2019-4-29
+Author: Kylie A. Bemis <k.bemis@northeastern.edu>
+Maintainer: Kylie A. Bemis <k.bemis@northeastern.edu>
+Description: This is an example R package designed for teaching
+	Bioconductor package development, used in the Advanced R
+	session of the May Institute Computation and Statistics
+	for mass spectrometry and proteomics short course at
+	Northeastern University.
+License: Artistic-2.0
+Depends: ProtGenerics, BiocParallel, graphics, methods
+Imports: BiocGenerics, S4Vectors, SummarizedExperiment
+Suggests: testthat, knitr, rmarkdown
+Encoding: UTF-8
+VignetteBuilder: knitr
+biocViews: MassSpectrometry
+RoxygenNote: 6.1.1
