@@ -19,5 +19,6 @@
 #' @importFrom stats supsmu
 #' @import S4Vectors
 #' @import ProtGenerics
+#' @import BiocParallel
 NULL
 

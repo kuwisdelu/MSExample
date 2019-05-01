@@ -9,7 +9,7 @@ simSpectra(n = 1L, peaks = 50L, mz = rlnorm(peaks, 7, 0.3),
   max(mz), by = 100, sdpeaks = sdpeakmult * log1p(intensity),
   sdpeakmult = 0.2, sdnoise = 0.1, sdmz = 10, resolution = 1000,
   fmax = 0.5, baseline = 0, decay = 10, units = c("ppm", "mz"),
-  representation = c("profile", "centroid"))
+  representation = c("profile", "centroid"), BPPARAM = bpparam())
 }
 \arguments{
 \item{n}{The number of spectra to simulate}
@@ -50,6 +50,8 @@ by \code{resolution}}
 \item{units}{Units for the width of the m/z bins}
 
 \item{representation}{Return a profile or centroided spectrum?}
+
+\item{BPPARAM}{A parallel backend}
 }
 \value{
 A \code{MassSpectrum} or \code{MassSpectraList}

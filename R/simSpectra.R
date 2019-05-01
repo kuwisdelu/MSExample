@@ -26,6 +26,7 @@
 #' @param decay Rate of decay of the baseline
 #' @param units Units for the width of the m/z bins
 #' @param representation Return a profile or centroided spectrum?
+#' @param BPPARAM A parallel backend
 #'
 #' @return A \code{MassSpectrum} or \code{MassSpectraList}
 #' 
@@ -36,7 +37,8 @@ simSpectra <- function(n = 1L, peaks = 50L,
 	sdpeaks = sdpeakmult * log1p(intensity), sdpeakmult = 0.2,
 	sdnoise = 0.1, sdmz = 10, resolution = 1000, fmax = 0.5,
 	baseline = 0, decay = 10, units=c("ppm", "mz"),
-	representation = c("profile", "centroid"))
+	representation = c("profile", "centroid"),
+	BPPARAM = bpparam())
 {
 	if ( length(mz) != length(intensity) )
 		stop("length of mz and intensity must match")
@@ -53,11 +55,15 @@ simSpectra <- function(n = 1L, peaks = 50L,
 	mz <- mz[i]
 	intensity <- intensity[i]
 	if ( n > 1L ) {
-		as(replicate(n, simSpectra(mz=mz, intensity=intensity,
-			from=from, to=to, by=by, sdpeaks=sdpeaks, sdpeakmult=sdpeakmult,
-			sdnoise=sdnoise, sdmz=sdmz, resolution=resolution, fmax=fmax,
-			baseline=baseline, decay=decay, units=units,
-			representation=representation)), "MassSpectraList")
+		spectra <- bplapply(1:n, function(i)
+			{	# Note: parallel RNG not easily reproducible
+				simSpectra(mz=mz, intensity=intensity,
+					from=from, to=to, by=by, sdpeaks=sdpeaks, sdpeakmult=sdpeakmult,
+					sdnoise=sdnoise, sdmz=sdmz, resolution=resolution, fmax=fmax,
+					baseline=baseline, decay=decay, units=units,
+					representation=representation)
+			}, BPPARAM=BPPARAM)
+		as(spectra, "MassSpectraList")
 	} else {
 		dmz <- mz / resolution
 		sdwidth <- qnorm(1 - fmax / 2) * dmz

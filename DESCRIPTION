@@ -11,7 +11,7 @@ Description: This is an example R package designed for teaching
 	for mass spectrometry and proteomics short course at
 	Northeastern University.
 License: Artistic-2.0
-Depends: ProtGenerics, graphics, methods
+Depends: ProtGenerics, BiocParallel, graphics, methods
 Imports: S4Vectors, stats
 Suggests: BiocStyle, testthat, knitr, rmarkdown
 Encoding: UTF-8
