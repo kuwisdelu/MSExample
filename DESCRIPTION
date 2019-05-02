@@ -12,8 +12,9 @@ Description: This is an example R package designed for teaching
 	Northeastern University.
 License: Artistic-2.0
 Depends: ProtGenerics, graphics, methods
-Imports: S4Vectors, stats
+Imports: S4Vectors, stats, Rcpp
 Suggests: BiocStyle, testthat, knitr, rmarkdown
+LinkingTo: Rcpp
 Encoding: UTF-8
 VignetteBuilder: knitr
 biocViews: MassSpectrometry
