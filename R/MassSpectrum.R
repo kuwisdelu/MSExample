@@ -41,9 +41,9 @@ setClass("MassSpectrum",
 			length(object@intensity), "]"))
 	}
 	outofrange <- object@peaks < 1L | object@peaks > length(object@mz)
-	if ( length(peaks) > 0L && any(outofrange) ) {
+	if ( length(object@peaks) > 0L && any(outofrange) ) {
 		errors <- c(errors , paste0("out-of-range peak indices [",
-			peaks[outofrange]))
+			object@peaks[outofrange]))
 	}
 	if ( is.null(errors) ) TRUE else errors
 }
