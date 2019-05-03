@@ -72,6 +72,8 @@ locmax3 <- function(x, halfWindow = 2) {
 			TRUE
 		}
 	}, logical(1))
-	c(rep(FALSE, halfWindow), out, rep(FALSE, halfWindow))
+	out <- c(rep(FALSE, halfWindow),
+		out, rep(FALSE, halfWindow))
+	which(out)
 }
 
